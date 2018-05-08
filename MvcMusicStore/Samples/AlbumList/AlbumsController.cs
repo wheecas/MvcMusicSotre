@@ -26,5 +26,10 @@ namespace MvcMusicStore.Controllers
             }
             return View(albums);
         }
+
+        public ActionResult Edit(int id = 0)
+        {
+            return HttpNotFound();
+        }
     }
 }
