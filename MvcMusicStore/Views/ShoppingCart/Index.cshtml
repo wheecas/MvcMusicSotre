@@ -2,31 +2,57 @@
 
 @{
     ViewBag.Title = "Shopping Cart";
+    string message = "<strong>This is bold!</strong>";
+    ViewBag.UserName = "test user";
+    bool showMessage = true;
 }
 
 <h2>@Model.Message</h2>
+<span>@Html.Raw(message)</span>
+<span>1+2=@(1+2)</span>
+@*@if (showMessage)
+{
+    @:The Asp.NET Twitter Handle is @@aspnet
+}*@
 <fieldset>
     <legend>Shopping Cart</legend>
 
     <table>
         <caption>Products in Cart</caption>
         <thead>
-        <tr>
-            <th>Product</th><th>Price</th>
-        </tr>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
         </thead>
         <tbody>
-        @foreach (var product in Model.Products) {
-            <tr>
-                <td>@product.Title</td><td>@product.Price</td>
-            </tr>
-        }
+            @foreach (var product in Model.Products)
+            {
+                <tr>
+                    <td>@product.Title</td>
+                    <td>@product.Price</td>
+                </tr>
+            }
         </tbody>
         <tfoot>
             <tr>
-                <td><strong>Total</strong></td><td>@Model.CartTotal</td>
+                <td><strong>Total</strong></td>
+                <td>@Model.CartTotal</td>
             </tr>
         </tfoot>
     </table>
+    <span id="message"></span>
 
 </fieldset>
+@section scripts{
+    <script type="text/javascript">
+    $(function () {
+        var message = 'Hello @Ajax.JavaScriptStringEncode(ViewBag.UserName)';
+        $("#message").html(message).show('slow');
+
+    });
+    </script>
+}
+
+
+

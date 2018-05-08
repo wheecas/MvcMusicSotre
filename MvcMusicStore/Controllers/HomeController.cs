@@ -29,5 +29,16 @@ namespace MvcMusicStore.Controllers
 
             return View();
         }
+
+        public ActionResult Edit()
+        {
+            return View();
+        }
+
+        public ActionResult Message()
+        {
+            ViewBag.Message = "This is a partial View.";
+            return PartialView();
+        }
     }
 }

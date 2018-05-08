@@ -194,6 +194,7 @@
     <Content Include="Views\Albums\ListWeaklyTyped.cshtml" />
     <Content Include="Views\Albums\ListStronglyTyped.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\Home\Message.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
