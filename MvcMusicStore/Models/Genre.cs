@@ -5,6 +5,9 @@ using System.Web;
 
 namespace MvcMusicStore.Models
 {
+    /// <summary>
+    /// 流派
+    /// </summary>
     public class Genre
     {
         public virtual int GenreId { get; set; }

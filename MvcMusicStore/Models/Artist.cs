@@ -5,6 +5,9 @@ using System.Web;
 
 namespace MvcMusicStore.Models
 {
+    /// <summary>
+    /// 艺术家
+    /// </summary>
     public class Artist
     {
         public virtual int ArtistId { get; set; }
