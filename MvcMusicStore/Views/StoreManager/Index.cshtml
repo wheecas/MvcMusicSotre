@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <h2>Index</h2>
 
 <p>
@@ -11,11 +10,12 @@
 </p>
 
 
-@using (Html.BeginForm("Search", "StoreManager", FormMethod.Get))
+@using (Html.BeginForm("Search", "StoreManager", FormMethod.Get,new { target="_blank",@class="editForm",data_value="1"}))
 {
     <input type="text" name="q" />
     <input type="submit" value="Search" />
 }
+
 <table class="table">
     <tr>
         <th>

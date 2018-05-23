@@ -58,7 +58,7 @@ namespace MvcMusicStore.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ArtistId = new SelectList(db.Artists,nameof(Artist.ArtistId), nameof(Artist.Name), album.ArtistId);
+            ViewBag.ArtistId = new SelectList(db.Artists, nameof(Artist.ArtistId), nameof(Artist.Name), album.ArtistId);
             ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
             return View(album);
         }
@@ -77,7 +77,8 @@ namespace MvcMusicStore.Controllers
             }
             //SelectList genres = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
             //SelectList artists = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
-            ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
+            //ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);//使用反射，有开销
+            ViewBag.ArtistId = db.Artists.Select(t => new SelectListItem { Text = t.Name, Value = t.ArtistId.ToString(), Selected = album.ArtistId == t.ArtistId });
             ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
             //AlbumEditViewModel model = new AlbumEditViewModel { AlbumToEdit = album, Genres = genres, Artists = artists };
             return View(album);
