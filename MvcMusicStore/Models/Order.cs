@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcMusicStore.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,10 +14,13 @@ namespace MvcMusicStore.Models
         public string UserName { get; set; }
         [Required]
         [StringLength(16,MinimumLength =1)]
+        [Display(Name ="First Name")]
         public string FirstName { get; set; }
         [Required]
         [StringLength(16,MinimumLength =1)]
+        [Display(Name ="Last Name")]
         public string LastName { get; set; }
+        [MaxWords(10,ErrorMessage ="太长了")]
         public string Address { get; set; }
         public string City { get; set; }
         public string State { get; set; }

@@ -123,6 +123,18 @@ namespace MvcMusicStore.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //[HttpPost]
+        //public ActionResult AddressAndPayment(Order newOrder)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        newOrder.UserName = User.Identity.Name;
+        //        newOrder.OrderDate = DateTime.Now;
+        //        db.Orders.Add(newOrder);
+        //        db.SaveChanges();
+        //    }
+        //}
        
     }
 }
